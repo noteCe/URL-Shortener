@@ -16,7 +16,7 @@ namespace LinkKS.Business
 
                 item.ID = Guid.NewGuid();
                 item.LongLink = longLink;
-                //item.ShortLink =
+                item.ShortLink = this.GenerateShortLink(dc);
                 item.UserID = userId;
                 item.Password = password;
                 item.CreatedDate = DateTime.Now;
@@ -26,6 +26,27 @@ namespace LinkKS.Business
 
                 return item.ShortLink;
 
+            }
+        }
+
+        private const string ValidChars = "0123456789abcdefghijklmnopqrstuwvxyz";
+        private string GenerateShortLink(LinkKSDataContext dc)
+        {
+
+            var rnd = new Random();
+            while (true)
+            {
+                var shortLink = "";
+
+                for (int i = 0; i < 6; i++)
+                {
+                    var index = rnd.Next(Link.ValidChars.Length);
+                    shortLink += Link.ValidChars[index];
+                }
+                if (!dc.LINKs.Any(c => c.ShortLink == shortLink))
+                {
+                    return shortLink;
+                }
             }
         }
 
