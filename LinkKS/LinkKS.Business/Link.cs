@@ -8,6 +8,7 @@ namespace LinkKS.Business
 {
     public class Link : ILink
     {
+        #region Shorten link kısaltma metodu
         public string Shorten(string longLink, Guid? userId, string password)
         {
             using (var dc = new LinkKSDataContext())
@@ -28,7 +29,9 @@ namespace LinkKS.Business
 
             }
         }
+        #endregion
 
+        #region GenerateShortLink rastgele deger üretme metodu
         private const string ValidChars = "0123456789abcdefghijklmnopqrstuwvxyz";
         private string GenerateShortLink(LinkKSDataContext dc)
         {
@@ -49,21 +52,47 @@ namespace LinkKS.Business
                 }
             }
         }
+        #endregion
 
+        #region UpdateExpireDate 
         public void UpdateExpireDate(Guid linkId, DateTime? expireDate)
         {
-            throw new NotImplementedException();
-        }
+            using (var dc = new LinkKSDataContext())
+            {
+                var item = dc.LINKs.First(c => c.ID == linkId);
+                item.ExpireDate = expireDate;
 
+                dc.SubmitChanges();
+            }
+        }
+        #endregion
+
+        #region UpdateNotification
         public void UpdateNotification(Guid linkId, bool notification)
         {
-            throw new NotImplementedException();
+            using (var dc = new LinkKSDataContext())
+            {
+                var item = dc.LINKs.First(c => c.ID == linkId);
+                item.Notification = notification;
+
+                dc.SubmitChanges();
+            }
         }
 
+        #endregion
+
+        #region UpdateOneShot
         public void UpdateOneShot(Guid linkId, bool oneShot)
         {
-            throw new NotImplementedException();
+            using (var dc = new LinkKSDataContext())
+            {
+                var item = dc.LINKs.First(c => c.ID == linkId);
+                item.OneShot = oneShot;
+
+                dc.SubmitChanges();
+            }
         }
+        #endregion
 
         #region UpdatePassword
         public void UpdatePassword(Guid linkId, string password)
@@ -76,6 +105,6 @@ namespace LinkKS.Business
                 dc.SubmitChanges();
             }
         }
-        #endregion UpdatePassword
+        #endregion
     }
 }
