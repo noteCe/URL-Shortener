@@ -30,15 +30,15 @@ namespace LinkKS.Business
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertLINK(LINK instance);
-    partial void UpdateLINK(LINK instance);
-    partial void DeleteLINK(LINK instance);
     partial void InsertLINK_LOG(LINK_LOG instance);
     partial void UpdateLINK_LOG(LINK_LOG instance);
     partial void DeleteLINK_LOG(LINK_LOG instance);
     partial void InsertUSER(USER instance);
     partial void UpdateUSER(USER instance);
     partial void DeleteUSER(USER instance);
+    partial void InsertLINK(LINK instance);
+    partial void UpdateLINK(LINK instance);
+    partial void DeleteLINK(LINK instance);
     #endregion
 		
 		public LinkKSDataContext() : 
@@ -71,14 +71,6 @@ namespace LinkKS.Business
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<LINK> LINKs
-		{
-			get
-			{
-				return this.GetTable<LINK>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LINK_LOG> LINK_LOGs
 		{
 			get
@@ -94,352 +86,13 @@ namespace LinkKS.Business
 				return this.GetTable<USER>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LINK")]
-	public partial class LINK : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Guid _ID;
-		
-		private string _ShortLink;
-		
-		private string _LongLink;
-		
-		private System.Guid _UserID;
-		
-		private System.DateTime _CreatedDate;
-		
-		private string _Password;
-		
-		private bool _Notification;
-		
-		private System.Nullable<System.DateTime> _ExpireDate;
-		
-		private bool _OneShot;
-		
-		private byte _Status;
-		
-		private EntitySet<LINK_LOG> _LINK_LOGs;
-		
-		private EntityRef<USER> _USER;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(System.Guid value);
-    partial void OnIDChanged();
-    partial void OnShortLinkChanging(string value);
-    partial void OnShortLinkChanged();
-    partial void OnLongLinkChanging(string value);
-    partial void OnLongLinkChanged();
-    partial void OnUserIDChanging(System.Guid value);
-    partial void OnUserIDChanged();
-    partial void OnCreatedDateChanging(System.DateTime value);
-    partial void OnCreatedDateChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnNotificationChanging(bool value);
-    partial void OnNotificationChanged();
-    partial void OnExpireDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnExpireDateChanged();
-    partial void OnOneShotChanging(bool value);
-    partial void OnOneShotChanged();
-    partial void OnStatusChanging(byte value);
-    partial void OnStatusChanged();
-    #endregion
-		
-		public LINK()
-		{
-			this._LINK_LOGs = new EntitySet<LINK_LOG>(new Action<LINK_LOG>(this.attach_LINK_LOGs), new Action<LINK_LOG>(this.detach_LINK_LOGs));
-			this._USER = default(EntityRef<USER>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid ID
+		public System.Data.Linq.Table<LINK> LINKs
 		{
 			get
 			{
-				return this._ID;
+				return this.GetTable<LINK>();
 			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShortLink", DbType="Char(6) NOT NULL", CanBeNull=false)]
-		public string ShortLink
-		{
-			get
-			{
-				return this._ShortLink;
-			}
-			set
-			{
-				if ((this._ShortLink != value))
-				{
-					this.OnShortLinkChanging(value);
-					this.SendPropertyChanging();
-					this._ShortLink = value;
-					this.SendPropertyChanged("ShortLink");
-					this.OnShortLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LongLink", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string LongLink
-		{
-			get
-			{
-				return this._LongLink;
-			}
-			set
-			{
-				if ((this._LongLink != value))
-				{
-					this.OnLongLinkChanging(value);
-					this.SendPropertyChanging();
-					this._LongLink = value;
-					this.SendPropertyChanged("LongLink");
-					this.OnLongLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._USER.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="SmallDateTime NOT NULL")]
-		public System.DateTime CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(20)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notification", DbType="Bit NOT NULL")]
-		public bool Notification
-		{
-			get
-			{
-				return this._Notification;
-			}
-			set
-			{
-				if ((this._Notification != value))
-				{
-					this.OnNotificationChanging(value);
-					this.SendPropertyChanging();
-					this._Notification = value;
-					this.SendPropertyChanged("Notification");
-					this.OnNotificationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpireDate", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> ExpireDate
-		{
-			get
-			{
-				return this._ExpireDate;
-			}
-			set
-			{
-				if ((this._ExpireDate != value))
-				{
-					this.OnExpireDateChanging(value);
-					this.SendPropertyChanging();
-					this._ExpireDate = value;
-					this.SendPropertyChanged("ExpireDate");
-					this.OnExpireDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OneShot", DbType="Bit NOT NULL")]
-		public bool OneShot
-		{
-			get
-			{
-				return this._OneShot;
-			}
-			set
-			{
-				if ((this._OneShot != value))
-				{
-					this.OnOneShotChanging(value);
-					this.SendPropertyChanging();
-					this._OneShot = value;
-					this.SendPropertyChanged("OneShot");
-					this.OnOneShotChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="TinyInt NOT NULL")]
-		public byte Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LINK_LINK_LOG", Storage="_LINK_LOGs", ThisKey="ID", OtherKey="LinkID")]
-		public EntitySet<LINK_LOG> LINK_LOGs
-		{
-			get
-			{
-				return this._LINK_LOGs;
-			}
-			set
-			{
-				this._LINK_LOGs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USER_LINK", Storage="_USER", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public USER USER
-		{
-			get
-			{
-				return this._USER.Entity;
-			}
-			set
-			{
-				USER previousValue = this._USER.Entity;
-				if (((previousValue != value) 
-							|| (this._USER.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._USER.Entity = null;
-						previousValue.LINKs.Remove(this);
-					}
-					this._USER.Entity = value;
-					if ((value != null))
-					{
-						value.LINKs.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(System.Guid);
-					}
-					this.SendPropertyChanged("USER");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LINK_LOGs(LINK_LOG entity)
-		{
-			this.SendPropertyChanging();
-			entity.LINK = this;
-		}
-		
-		private void detach_LINK_LOGs(LINK_LOG entity)
-		{
-			this.SendPropertyChanging();
-			entity.LINK = null;
 		}
 	}
 	
@@ -849,6 +502,353 @@ namespace LinkKS.Business
 		{
 			this.SendPropertyChanging();
 			entity.USER = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LINK")]
+	public partial class LINK : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _ID;
+		
+		private string _ShortLink;
+		
+		private string _LongLink;
+		
+		private System.Nullable<System.Guid> _UserID;
+		
+		private System.DateTime _CreatedDate;
+		
+		private string _Password;
+		
+		private bool _Notification;
+		
+		private System.Nullable<System.DateTime> _ExpireDate;
+		
+		private bool _OneShot;
+		
+		private byte _Status;
+		
+		private EntitySet<LINK_LOG> _LINK_LOGs;
+		
+		private EntityRef<USER> _USER;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(System.Guid value);
+    partial void OnIDChanged();
+    partial void OnShortLinkChanging(string value);
+    partial void OnShortLinkChanged();
+    partial void OnLongLinkChanging(string value);
+    partial void OnLongLinkChanged();
+    partial void OnUserIDChanging(System.Nullable<System.Guid> value);
+    partial void OnUserIDChanged();
+    partial void OnCreatedDateChanging(System.DateTime value);
+    partial void OnCreatedDateChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnNotificationChanging(bool value);
+    partial void OnNotificationChanged();
+    partial void OnExpireDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnExpireDateChanged();
+    partial void OnOneShotChanging(bool value);
+    partial void OnOneShotChanged();
+    partial void OnStatusChanging(byte value);
+    partial void OnStatusChanged();
+    #endregion
+		
+		public LINK()
+		{
+			this._LINK_LOGs = new EntitySet<LINK_LOG>(new Action<LINK_LOG>(this.attach_LINK_LOGs), new Action<LINK_LOG>(this.detach_LINK_LOGs));
+			this._USER = default(EntityRef<USER>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShortLink", DbType="Char(6) NOT NULL", CanBeNull=false)]
+		public string ShortLink
+		{
+			get
+			{
+				return this._ShortLink;
+			}
+			set
+			{
+				if ((this._ShortLink != value))
+				{
+					this.OnShortLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ShortLink = value;
+					this.SendPropertyChanged("ShortLink");
+					this.OnShortLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LongLink", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string LongLink
+		{
+			get
+			{
+				return this._LongLink;
+			}
+			set
+			{
+				if ((this._LongLink != value))
+				{
+					this.OnLongLinkChanging(value);
+					this.SendPropertyChanging();
+					this._LongLink = value;
+					this.SendPropertyChanged("LongLink");
+					this.OnLongLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._USER.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(20)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notification", DbType="Bit NOT NULL")]
+		public bool Notification
+		{
+			get
+			{
+				return this._Notification;
+			}
+			set
+			{
+				if ((this._Notification != value))
+				{
+					this.OnNotificationChanging(value);
+					this.SendPropertyChanging();
+					this._Notification = value;
+					this.SendPropertyChanged("Notification");
+					this.OnNotificationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpireDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> ExpireDate
+		{
+			get
+			{
+				return this._ExpireDate;
+			}
+			set
+			{
+				if ((this._ExpireDate != value))
+				{
+					this.OnExpireDateChanging(value);
+					this.SendPropertyChanging();
+					this._ExpireDate = value;
+					this.SendPropertyChanged("ExpireDate");
+					this.OnExpireDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OneShot", DbType="Bit NOT NULL")]
+		public bool OneShot
+		{
+			get
+			{
+				return this._OneShot;
+			}
+			set
+			{
+				if ((this._OneShot != value))
+				{
+					this.OnOneShotChanging(value);
+					this.SendPropertyChanging();
+					this._OneShot = value;
+					this.SendPropertyChanged("OneShot");
+					this.OnOneShotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="TinyInt NOT NULL")]
+		public byte Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LINK_LINK_LOG", Storage="_LINK_LOGs", ThisKey="ID", OtherKey="LinkID")]
+		public EntitySet<LINK_LOG> LINK_LOGs
+		{
+			get
+			{
+				return this._LINK_LOGs;
+			}
+			set
+			{
+				this._LINK_LOGs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USER_LINK", Storage="_USER", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public USER USER
+		{
+			get
+			{
+				return this._USER.Entity;
+			}
+			set
+			{
+				USER previousValue = this._USER.Entity;
+				if (((previousValue != value) 
+							|| (this._USER.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._USER.Entity = null;
+						previousValue.LINKs.Remove(this);
+					}
+					this._USER.Entity = value;
+					if ((value != null))
+					{
+						value.LINKs.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("USER");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LINK_LOGs(LINK_LOG entity)
+		{
+			this.SendPropertyChanging();
+			entity.LINK = this;
+		}
+		
+		private void detach_LINK_LOGs(LINK_LOG entity)
+		{
+			this.SendPropertyChanging();
+			entity.LINK = null;
 		}
 	}
 }
