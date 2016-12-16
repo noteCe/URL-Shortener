@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILink.cs" />
+    <Compile Include="IUser.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="LinkKS.designer.cs">
       <AutoGen>True</AutoGen>
@@ -54,6 +55,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
