@@ -13,7 +13,10 @@ namespace LinkKS.Test
         {
             var link = new Link();
             //var shortLink = link.Shorten("http://www.empatik.com", null, "12345");
-            link.UpdatePassword(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), "789");
+            // link.UpdatePassword(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), "789");
+            // link.UpdateExpireDate(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), new DateTime(2016, 12, 16));
+            //link.UpdateNotification(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), true);
+            link.UpdateOneShot(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), true);
 
         }
     }
