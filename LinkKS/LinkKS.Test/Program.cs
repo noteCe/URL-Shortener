@@ -11,7 +11,9 @@ namespace LinkKS.Test
     {
         static void Main(string[] args)
         {
-           
+            var link = new Link();
+            var shortLink = link.Shorten("http://www.empatik.com", null, "12345");
+
         }
     }
 }
