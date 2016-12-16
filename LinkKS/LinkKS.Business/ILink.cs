@@ -13,16 +13,16 @@ namespace LinkKS.Business
         string Shorten(string longLink, Guid? userId, string password);
         
         //Linkin sadece son kullanım tarihini güncellemek
-        bool UpdateExpireDate(Guid linkId, DateTime? expireDate);
+        void UpdateExpireDate(Guid linkId, DateTime? expireDate);
 
         //Linkin sadece şifresini güncellemek
-        bool UpdatePassword(Guid linkId, string password);
+        void UpdatePassword(Guid linkId, string password);
 
         //Linkin sadece bildirim ayarını güncellemek
-        bool UpdateNotification(Guid linkId, bool notification);
+        void UpdateNotification(Guid linkId, bool notification);
 
         //Linkin sadece bir kullanımlık olup olmadığını güncellemek
-        bool UpdateOneShot(Guid linkId, bool oneShot);
+        void UpdateOneShot(Guid linkId, bool oneShot);
 
         //UpdateStatus(Guid linkId, enum_tipinde_deger);
 

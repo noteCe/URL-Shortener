@@ -50,24 +50,32 @@ namespace LinkKS.Business
             }
         }
 
-        public bool UpdateExpireDate(Guid linkId, DateTime? expireDate)
+        public void UpdateExpireDate(Guid linkId, DateTime? expireDate)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateNotification(Guid linkId, bool notification)
+        public void UpdateNotification(Guid linkId, bool notification)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateOneShot(Guid linkId, bool oneShot)
+        public void UpdateOneShot(Guid linkId, bool oneShot)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdatePassword(Guid linkId, string password)
+        #region UpdatePassword
+        public void UpdatePassword(Guid linkId, string password)
         {
-            throw new NotImplementedException();
+            using (var dc = new LinkKSDataContext())
+            {
+                var item = dc.LINKs.First(c => c.ID == linkId);
+                item.Password = password;
+
+                dc.SubmitChanges();
+            }
         }
+        #endregion UpdatePassword
     }
 }

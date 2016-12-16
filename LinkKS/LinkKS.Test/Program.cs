@@ -12,7 +12,8 @@ namespace LinkKS.Test
         static void Main(string[] args)
         {
             var link = new Link();
-            var shortLink = link.Shorten("http://www.empatik.com", null, "12345");
+            //var shortLink = link.Shorten("http://www.empatik.com", null, "12345");
+            link.UpdatePassword(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"), "789");
 
         }
     }
