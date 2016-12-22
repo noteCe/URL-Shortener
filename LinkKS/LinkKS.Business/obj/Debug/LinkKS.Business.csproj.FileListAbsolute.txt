@@ -4,3 +4,5 @@ C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkK
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Business\obj\Debug\LinkKS.Business.csprojResolveAssemblyReference.cache
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Business\obj\Debug\LinkKS.Business.dll
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Business\obj\Debug\LinkKS.Business.pdb
+C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Business\bin\Debug\LinkKS.DTO.dll
+C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Business\bin\Debug\LinkKS.DTO.pdb

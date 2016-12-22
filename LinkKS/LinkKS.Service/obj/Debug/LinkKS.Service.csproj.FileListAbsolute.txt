@@ -21,3 +21,5 @@ C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkK
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Service\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Service\obj\Debug\LinkKS.Service.dll
 C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Service\obj\Debug\LinkKS.Service.pdb
+C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Service\bin\LinkKS.DTO.dll
+C:\Users\Saliha\Documents\Visual Studio 2015\Projects\URL-Shortener\LinkKS\LinkKS.Service\bin\LinkKS.DTO.pdb

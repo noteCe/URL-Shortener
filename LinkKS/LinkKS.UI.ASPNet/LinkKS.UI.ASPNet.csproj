@@ -111,6 +111,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinkKS.DTO\LinkKS.DTO.csproj">
+      <Project>{7d3514bd-09ab-4c3f-9289-8bd93d4f1d6c}</Project>
+      <Name>LinkKS.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinkKS.ServiceContract\LinkKS.ServiceContract.csproj">
+      <Project>{1a30c0b6-a928-476f-9c2e-859718da51d6}</Project>
+      <Name>LinkKS.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

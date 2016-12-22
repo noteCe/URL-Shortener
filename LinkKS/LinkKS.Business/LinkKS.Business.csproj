@@ -77,6 +77,12 @@
       <DependentUpon>LinkKS.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinkKS.DTO\LinkKS.DTO.csproj">
+      <Project>{7d3514bd-09ab-4c3f-9289-8bd93d4f1d6c}</Project>
+      <Name>LinkKS.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
