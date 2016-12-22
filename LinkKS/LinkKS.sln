@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkKS.Business", "LinkKS.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkKS.Test", "LinkKS.Test\LinkKS.Test.csproj", "{D306EDAA-0F17-4AD7-BE75-E7B6AE88E61D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkKS.ServiceContract", "LinkKS.ServiceContract\LinkKS.ServiceContract.csproj", "{1A30C0B6-A928-476F-9C2E-859718DA51D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkKS.Service", "LinkKS.Service\LinkKS.Service.csproj", "{92519766-7F49-4822-95BB-1B679CACD35A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D306EDAA-0F17-4AD7-BE75-E7B6AE88E61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D306EDAA-0F17-4AD7-BE75-E7B6AE88E61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D306EDAA-0F17-4AD7-BE75-E7B6AE88E61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A30C0B6-A928-476F-9C2E-859718DA51D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A30C0B6-A928-476F-9C2E-859718DA51D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A30C0B6-A928-476F-9C2E-859718DA51D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A30C0B6-A928-476F-9C2E-859718DA51D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92519766-7F49-4822-95BB-1B679CACD35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92519766-7F49-4822-95BB-1B679CACD35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92519766-7F49-4822-95BB-1B679CACD35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92519766-7F49-4822-95BB-1B679CACD35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

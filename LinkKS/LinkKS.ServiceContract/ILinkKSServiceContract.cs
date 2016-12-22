@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace LinkKS.ServiceContract
 {
     [ServiceContract]
-    interface ILinkKSServiceContract
+    public interface ILinkKSServiceContract
     {
 
         [OperationContract]
