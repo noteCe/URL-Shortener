@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LinkKS.DTO;
 
 namespace LinkKS.Business
 {
     public class User : IUser
     {
+        public DTO_USER GetProfile(Guid userId)
+        {
+           
+            using (var dc = new LinkKSDataContext())
+            {
+                return dc.USERs.Where(x => x.ID == userId).Select(c => new DTO_USER
+                {
+                    Name = c.Name,
+                    Email=c.EMail,
+                    Password=c.Password
+
+                }).FirstOrDefault();
+            }
+        }
         #region SignIn
 
         public Guid? SignIn(string email, string password)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using LinkKS.DTO;
 
 namespace LinkKS.ServiceContract
 {
@@ -17,6 +18,8 @@ namespace LinkKS.ServiceContract
         [OperationContract]
         void UpdateLinkPassword(Guid linkId, string password);
 
+        [OperationContract]
+        DTO_USER GetUserProfile(Guid userId);
 
 
     }
