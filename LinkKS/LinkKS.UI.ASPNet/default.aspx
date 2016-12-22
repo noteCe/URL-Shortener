@@ -29,7 +29,9 @@
                         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>
+                        <asp:Label ID="txtResult" runat="server" Text=""></asp:Label>
+                    </td>
                     <td>
                         <asp:Button ID="btnGetir" runat="server" Text="Bilgileri Getir" OnClick="btnGetir_Click" />
                     </td>
