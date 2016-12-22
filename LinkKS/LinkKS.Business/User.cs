@@ -14,9 +14,13 @@ namespace LinkKS.Business
         {
             using (var dc = new LinkKSDataContext())
             {
-                var item = dc.USERs.FirstOrDefault(c => c.EMail == email && c.Password == password);
+                var id = dc.USERs.Where(x => x.EMail == email && x.Password == password).Select(c => c.ID).FirstOrDefault();
 
-                return item.ID;
+                if (id == Guid.Empty) // Empty=0
+                {
+                    return null;
+                }
+                return id;
 
             }
         }
