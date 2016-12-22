@@ -25,7 +25,7 @@ namespace LinkKS.UI.ASPNet
             var adress = new EndpointAddress("http://localhost:64615/LinkKSService.svc");
             var channel = ChannelFactory<ILinkKSServiceContract>.CreateChannel(binding, adress);
 
-            var user = channel.GetUserProfile(new Guid("0D7FA621-1BBE-44C1-BBDF-D3B497FC16D5"));
+            var user = channel.GetUserProfile(new Guid("EE05A40E-04E6-4E36-998F-B93A6DB62568"));
 
             txtName.Text = user.Name;
             txtEmail.Text = user.Email;
